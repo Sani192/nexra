@@ -4,7 +4,6 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", weight: ["800"], display: "swap" });
-
 const siteUrl = "https://nexra.ai";
 
 export const metadata: Metadata = {
@@ -17,7 +16,7 @@ export const metadata: Metadata = {
     description: "Minimal, practical software products for growing businesses.",
     url: siteUrl,
     siteName: "Nexra AI",
-    images: [{ url: "/og-image.svg", width: 1440, height: 920, alt: "TableBoost dashboard by Nexra AI" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Nexra AI and TableBoost product preview" }],
     locale: "en_US",
     type: "website",
   },
@@ -25,12 +24,19 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nexra AI | Building Better Business Software",
     description: "Simple, practical, intelligent business software from Nexra AI.",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
     creator: "@nexraai",
   },
   robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className={`${inter.variable} ${manrope.variable}`}><body>{children}</body></html>;
+  return (
+    <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
+      <body>
+        <a className="skip-link" href="#top">Skip to content</a>
+        {children}
+      </body>
+    </html>
+  );
 }

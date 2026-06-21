@@ -1,18 +1,16 @@
+import { aboutItems } from "@/lib/site-content";
+
 export function AboutSection() {
   return (
-    <section id="about" className="bg-slate-50 px-6 py-24">
-      <div className="mx-auto max-w-4xl text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
-          About
-        </p>
-        <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-          Nexra partners with teams that want practical AI adoption.
-        </h2>
-        <p className="mt-8 text-lg leading-8 text-slate-600">
-          We combine product thinking, workflow design, and implementation
-          support so organizations can make confident progress without turning
-          experimentation into operational noise.
-        </p>
+    <section id="about" className="bg-[#0B1120] px-6 py-24 text-white" aria-labelledby="about-title">
+      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-3">
+        <h2 id="about-title" className="heading text-4xl md:text-5xl">About Nexra AI</h2>
+        {aboutItems.map((item) => (
+          <article key={item.title}>
+            <h3 className="heading text-2xl text-cyan-100">{item.title}</h3>
+            <p className="mt-4 leading-7 text-slate-300">{item.description}</p>
+          </article>
+        ))}
       </div>
     </section>
   );

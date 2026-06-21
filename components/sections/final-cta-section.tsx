@@ -1,20 +1,19 @@
+import { Button } from "@/components/ui/button";
+import { socials } from "@/lib/site-content";
+
 export function FinalCtaSection() {
   return (
-    <section className="px-6 py-24">
-      <div className="mx-auto max-w-4xl rounded-[2rem] bg-slate-950 px-8 py-16 text-center text-white md:px-16">
-        <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
-          Ready to turn AI exploration into dependable workflows?
-        </h2>
-        <p className="mx-auto mt-6 max-w-2xl leading-8 text-slate-300">
-          Start with a focused conversation about the systems, teams, and
-          decisions where better tooling could create leverage.
-        </p>
-        <a
-          className="mt-10 inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200"
-          href="mailto:hello@nexra.example"
-        >
-          Contact Nexra
-        </a>
+    <section className="px-6 py-24 text-center" aria-labelledby="cta-title">
+      <h2 id="cta-title" className="heading text-4xl md:text-6xl">Build with Nexra AI.</h2>
+      <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">Follow the company, ask about TableBoost, or start a conversation about practical software for your business.</p>
+      <div className="mt-9 flex flex-wrap justify-center gap-3">
+        {socials.map(({ href, label, icon: Icon, external }) => (
+          <Button key={label} asChild variant={label === "Email" ? "default" : "secondary"}>
+            <a href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined}>
+              <Icon className="size-4" aria-hidden="true" />{label}
+            </a>
+          </Button>
+        ))}
       </div>
     </section>
   );

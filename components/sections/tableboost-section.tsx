@@ -1,31 +1,30 @@
-import { tableBoostFeatures } from "../../lib/site-content";
+import Image from "next/image";
+import { Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { MotionSection } from "@/components/motion-section";
+import { tableBoostBenefits } from "@/lib/site-content";
 
 export function TableBoostSection() {
   return (
-    <section id="tableboost" className="bg-slate-950 px-6 py-24 text-white">
-      <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1fr_1.2fr] md:items-center">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-400">
-            TableBoost
-          </p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
-            Cleaner table work without losing the audit trail.
-          </h2>
-        </div>
-        <div className="rounded-3xl bg-white/10 p-8 ring-1 ring-white/15">
-          <p className="leading-8 text-slate-200">
-            TableBoost is our focused workflow concept for teams that spend too
-            much time cleaning, reshaping, and validating operational data.
-          </p>
+    <section id="products" className="bg-surface px-6 py-24" aria-labelledby="featured-title">
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
+        <MotionSection>
+          <h2 id="featured-title" className="heading text-4xl md:text-5xl">TableBoost keeps service moving.</h2>
+          <p className="mt-5 text-lg leading-8 text-slate-600">A restaurant operations product for reservations, waitlists, floor visibility, and guest flow, presented in a clean workspace teams can trust during a rush.</p>
           <ul className="mt-8 space-y-4">
-            {tableBoostFeatures.map((feature) => (
-              <li key={feature} className="flex gap-3 text-slate-100">
-                <span aria-hidden="true">→</span>
-                <span>{feature}</span>
+            {tableBoostBenefits.map((item) => (
+              <li className="flex gap-3" key={item}>
+                <Check className="mt-1 size-5 text-accent" aria-hidden="true" />
+                <span>{item}</span>
               </li>
             ))}
           </ul>
-        </div>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Button asChild><a href="mailto:hello@nexra.ai?subject=TableBoost%20demo%20request">Request TableBoost demo</a></Button>
+            <Button asChild variant="secondary"><a href="mailto:hello@nexra.ai?subject=TableBoost%20waitlist">Join the waitlist</a></Button>
+          </div>
+        </MotionSection>
+        <Image className="rounded-3xl border border-border bg-white shadow-xl" src="/tableboost-desktop.svg" alt="Detailed TableBoost desktop product interface with reservations, floor status, and next-up queue" width={1440} height={920} />
       </div>
     </section>
   );
