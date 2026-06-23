@@ -3,15 +3,15 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-full text-sm font-semibold transition-colors disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-accent",
+  "inline-flex items-center justify-center gap-2 rounded-full text-sm font-semibold transition-all disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary",
   {
     variants: {
       variant: {
-        default: "bg-primary text-white hover:bg-blue-700",
-        secondary: "bg-surface text-foreground hover:bg-slate-100 border border-border",
-        ghost: "hover:bg-surface text-foreground",
+        default: "bg-[#0B1120] text-[#FFFFFF] hover:bg-[#1E293B] hover:-translate-y-0.5 active:translate-y-0 shadow-xs duration-200",
+        secondary: "border border-[#E5E7EB] bg-transparent text-[#0B1120] hover:bg-[#FAFAFA] hover:-translate-y-0.5 active:translate-y-0 duration-200",
+        ghost: "text-[#475569] hover:text-[#0B1120] hover:bg-[#FAFAFA] duration-200",
       },
-      size: { default: "h-11 px-5", lg: "h-12 px-6", icon: "size-11" },
+      size: { default: "h-11 px-5", lg: "h-12 px-6", icon: "size-10" },
     },
     defaultVariants: { variant: "default", size: "default" },
   },

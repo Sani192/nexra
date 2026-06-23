@@ -7,7 +7,7 @@ export function organizationSchema() {
       {
         "@type": "Organization",
         "@id": `${siteUrl}/#organization`,
-        name: "Nexra AI",
+        name: "Nexra",
         url: siteUrl,
         email: contactEmail,
         sameAs: socials.filter((social) => social.external).map((social) => social.href),

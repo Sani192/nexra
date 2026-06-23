@@ -8,24 +8,24 @@ const siteUrl = "https://nexra.ai";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "Nexra AI | Building Better Business Software", template: "%s | Nexra AI" },
-  description: "Nexra AI builds simple, practical, intelligent business software, starting with TableBoost for restaurant operations.",
+  title: { default: "Nexra | Building Better Business Software", template: "%s | Nexra" },
+  description: "Nexra builds simple, practical, intelligent business software, starting with TableBoost for restaurant operations.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Nexra AI | Building Better Business Software",
+    title: "Nexra | Building Better Business Software",
     description: "Minimal, practical software products for growing businesses.",
     url: siteUrl,
-    siteName: "Nexra AI",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Nexra AI and TableBoost product preview" }],
+    siteName: "Nexra",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Nexra and TableBoost product preview" }],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nexra AI | Building Better Business Software",
-    description: "Simple, practical, intelligent business software from Nexra AI.",
+    title: "Nexra | Building Better Business Software",
+    description: "Simple, practical, intelligent business software from Nexra.",
     images: ["/og-image.png"],
-    creator: "@nexraai",
+    creator: "@nexra_dev_ai",
   },
   robots: { index: true, follow: true },
 };

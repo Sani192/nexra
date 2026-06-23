@@ -1,4 +1,4 @@
-export type ProductStatus = "Live" | "In development" | "Research";
+export type ProductStatus = "Current" | "Coming Soon";
 
 export interface Product {
   name: string;

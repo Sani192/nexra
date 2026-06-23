@@ -7,38 +7,38 @@ export type SocialLink = { href: string; label: string; icon: LucideIcon; extern
 export type AboutItem = { title: string; description: string };
 
 export const siteUrl = "https://nexra.ai";
-export const contactEmail = "hello@nexra.ai";
+export const contactEmail = "nexra.dev@gmail.com";
 
 export const principles = [
-  { title: "Simple", description: "Clear workflows, calm interfaces, and fewer clicks between intent and outcome." },
-  { title: "Practical", description: "Products shaped around real operational work, not novelty for its own sake." },
-  { title: "Intelligent", description: "Automation that supports decisions while keeping teams in control." },
-  { title: "Growth", description: "Systems designed to compound: better data, smoother service, stronger businesses." },
+  { title: "Simple", description: "Software should feel invisible." },
+  { title: "Practical", description: "Real problems. Real solutions." },
+  { title: "Intelligent", description: "Technology that quietly works in the background." },
+  { title: "Growth", description: "Built for businesses that want to grow." },
 ] satisfies Principle[];
 
 export const products = [
-  { name: "TableBoost", status: "Live", description: "Restaurant reservation, waitlist, and floor management built for focused service." },
-  { name: "Society-Agent", status: "In development", description: "A business assistant for organizing customer communication and daily follow-up." },
-  { name: "RiseRoot", status: "Research", description: "Tools for local brands to turn operations, content, and customer insight into durable growth." },
+  { name: "TableBoost", status: "Current", description: "Restaurant reservation, waitlist, and floor management built for focused service." },
+  { name: "Society-Agent", status: "Coming Soon", description: "A business assistant for organizing customer communication and daily follow-up." },
+  { name: "RiseRoot", status: "Coming Soon", description: "Tools for local brands to turn operations, content, and customer insight into durable growth." },
 ] satisfies Product[];
 
 export const tableBoostBenefits = [
-  "See reservations, tables, and waitlist status in one place.",
-  "Coordinate front-of-house decisions from desktop or mobile.",
-  "Give managers a calmer view of the shift without burying details.",
+  "More guests.",
+  "More repeat visits.",
+  "More revenue.",
 ] as const;
 
 export const socials = [
-  { href: "https://instagram.com/nexraai", label: "Instagram", icon: Instagram, external: true },
-  { href: "https://x.com/nexraai", label: "X", icon: X, external: true },
-  { href: "https://facebook.com/nexraai", label: "Facebook", icon: Facebook, external: true },
+  { href: "https://instagram.com/nexra.dev.ai", label: "Instagram", icon: Instagram, external: true },
+  { href: "https://x.com/nexra_dev_ai", label: "X", icon: X, external: true },
+  { href: "https://facebook.com/nexra", label: "Facebook", icon: Facebook, external: true },
   { href: `mailto:${contactEmail}`, label: "Email", icon: Mail },
 ] satisfies SocialLink[];
 
 export const aboutItems = [
   { title: "Mission", description: "Build better business software that makes everyday work clearer, faster, and more resilient." },
   { title: "Vision", description: "A portfolio of focused products that help independent businesses operate with the confidence of larger teams." },
-  { title: "Brand philosophy", description: "Premium does not need to be loud. Nexra AI favors useful design, strong fundamentals, and measured intelligence." },
+  { title: "Brand philosophy", description: "Premium does not need to be loud. Nexra favors useful design, strong fundamentals, and measured intelligence." },
 ] satisfies AboutItem[];
 
 export const footerLinks = [

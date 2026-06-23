@@ -3,11 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #0b1120;
-  --primary: #2563eb;
-  --secondary: #6d28d9;
-  --accent: #0891b2;
-  --surface: #f8fafc;
-  --border: #e2e8f0;
+  --primary: #0b1120;
+  --secondary: #475569;
+  --accent: #0f172a;
+  --surface: #fafafa;
+  --border: #e5e7eb;
 }
 
 @theme inline {
@@ -20,18 +20,98 @@
   --color-border: var(--border);
   --font-sans: var(--font-inter);
   --font-heading: var(--font-manrope);
+  
+  --animate-mesh-gradient: mesh-gradient 20s ease infinite;
+  --animate-scroll-down: scroll-down 2s infinite;
+  --animate-float-slow: float-slow 8s ease-in-out infinite;
+  --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  
+  @keyframes mesh-gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  @keyframes scroll-down {
+    0% {
+      transform: translate(-50%, 0) scale(1);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, 10px) scale(0.8);
+      opacity: 0;
+    }
+  }
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-6px) rotate(0.2deg);
+    }
+  }
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
 body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-a { color: inherit; text-decoration: none; }
-[id] { scroll-margin-top: 6rem; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+/* Custom Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
+/* Skip to Content Link */
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -44,17 +124,56 @@ a { color: inherit; text-decoration: none; }
   padding: 0.75rem 1rem;
   font-weight: 700;
 }
-.skip-link:focus { transform: translateY(0); }
-:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 75%, white); outline-offset: 4px; }
-::selection { background: color-mix(in srgb, var(--primary) 18%, white); }
-.heading { font-family: var(--font-manrope), system-ui, sans-serif; font-weight: 800; letter-spacing: -0.045em; }
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: #f1f5f9;
+  color: var(--foreground);
+}
+
+.heading {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+/* Glassmorphism panel utility */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom background patterns */
+.mesh-bg-gradient {
+  background: radial-gradient(circle at 50% 30%, rgba(15, 23, 42, 0.03) 0%, transparent 65%);
+}
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Guarantee white color for all text, links, and icons on dark buttons and elements */
+.text-white,
+.text-\[\#FFFFFF\],
+.text-white *,
+.text-\[\#FFFFFF\] *,
+.bg-\[\#0B1120\],
+.bg-\[\#0B1120\] * {
+  color: #ffffff !important;
 }
